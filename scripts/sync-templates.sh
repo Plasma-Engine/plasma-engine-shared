@@ -26,7 +26,9 @@ for target in "$@"; do
 
   echo "Syncing templates to $target/.github"
   mkdir -p "$target/.github"
-  rsync -av --delete "$TEMPLATE_DIR/" "$target/.github/"
+  rsync -av --delete \
+    --exclude 'workflows/' \
+    "$TEMPLATE_DIR/" "$target/.github/"
 done
 
 echo "Template sync complete."

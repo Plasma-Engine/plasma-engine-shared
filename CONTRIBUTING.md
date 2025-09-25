@@ -37,5 +37,5 @@ Thanks for investing in Plasma Engine! This repository houses shared libraries, 
 
 - Service repos manage their own release notes. Shared packages should update CHANGELOG.md (if present) and bump versions via Release Please or semantic-release workflows once configured.
 
-Questions? Reach out in the `#plasma-engine-devops` Slack channel or mention @xkonjin in your issue.
+Questions? Reach out in the `#plasma-engine-devops` Slack channel or mention @Plasma-Engine/platform-eng in your issue.
 

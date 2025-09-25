@@ -9,7 +9,7 @@ This repository centralizes shared assets for the Plasma Engine program:
 ## Getting Started
 
 ```bash
-git clone https://github.com/xkonjin/plasma-engine-shared.git
+git clone https://github.com/Plasma-Engine/plasma-engine-shared.git
 cd plasma-engine-shared
 ```
 

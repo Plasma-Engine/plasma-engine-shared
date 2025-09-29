@@ -7,6 +7,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
 TEMPLATE_DIR="$ROOT_DIR/.github"
+CODERABBIT_TEMPLATE="$ROOT_DIR/.coderabbit.yml"
 
 if [ ! -d "$TEMPLATE_DIR" ]; then
   echo "Template directory not found: $TEMPLATE_DIR" >&2
@@ -29,6 +30,11 @@ for target in "$@"; do
   rsync -av --delete \
     --exclude 'workflows/' \
     "$TEMPLATE_DIR/" "$target/.github/"
+
+  if [ -f "$CODERABBIT_TEMPLATE" ]; then
+    echo "Syncing .coderabbit.yml to $target"
+    cp "$CODERABBIT_TEMPLATE" "$target/.coderabbit.yml"
+  fi
 done
 
 echo "Template sync complete."
